@@ -22,4 +22,6 @@ function operate (firstNum, operator, secondNum){
     if (operator == '/') return divide(firstNum, secondNum);
 };
 
-
+let display = document.querySelector('#display')
+let clear = document.querySelector('#clear');
+clear.addEventListener('click', () => display.textContent = null)
