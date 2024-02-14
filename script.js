@@ -37,27 +37,26 @@ function clearIt(){
 
 let numbers = document.querySelectorAll('.numbers');
 let signs = document.querySelectorAll('.sign');
+let strArr = [];
 
 function displayIt(){
-    let strArr = [];    
+    
     for (let i = 0; i < numbers.length; i++){
         numbers[i].addEventListener('click', () =>{
             display.innerHTML += numbers[i].value;
             strArr.push(numbers[i].value);
+            
         });
     };
 
     for(let i = 0; i < signs.length; i++){
         signs[i].addEventListener('click', () =>{
             clearIt();
-            storeNum(strArr);
+            storeNum();
             strArr = [];
-
-            sign = signs[i].value;
-            
             getNum();
-            console.log(firstNumber);
-            console.log(secondNumber);
+            calculate();
+            sign = signs[i].value;
         })
     }
 };
@@ -65,10 +64,10 @@ displayIt();
 
 let numberArr = [];//store numbers that are typed at index 0 and will be changed every time a sign button is clicked
 
-function storeNum (arr){
+function storeNum (){
     let digit = '';
-    for(let i = 0; i < arr.length; i++){
-        digit += arr[i];
+    for(let i = 0; i < strArr.length; i++){
+        digit += strArr[i];
     }
     numberArr[0] = parseInt(digit);
 }
@@ -77,7 +76,7 @@ function storeNum (arr){
 function getNum() {
     if(firstNumber == null && result == null){
         firstNumber = numberArr[0];
-    } else if(firstNumber == null && result != null){
+    } else if(result != null){
         firstNumber = result;
     } else{
         secondNumber = numberArr[0];
@@ -85,3 +84,24 @@ function getNum() {
 }
 
 let result = null;
+
+function calculate(){
+    storeNum();
+    getNum();
+    if (firstNumber != null && secondNumber != null){
+        result = operate(firstNumber, sign, secondNumber);
+    };
+
+
+}
+
+
+let equate = document.querySelector('#equals')
+equate.addEventListener('click', () =>{
+    calculate();
+    display.textContent = result;
+    console.log(firstNumber);
+    console.log(secondNumber);
+    console.log(result);
+    
+})
