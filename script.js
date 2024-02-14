@@ -32,6 +32,13 @@ clear.addEventListener('click', () => clearIt());
 
 function clearIt(){
     display.textContent = null;
+    firstNumber = null;
+    secondNumber = null;
+    sign = [];
+    result = null;
+    strArr = [];
+    numberArr= [];
+    
 }
 
 
@@ -53,7 +60,7 @@ function displayIt(){
 
     for(let i = 0; i < signs.length; i++){
         signs[i].addEventListener('click', () =>{
-            clearIt();
+            display.textContent = null;
             storeNum();
             strArr = [];
             getNum();
