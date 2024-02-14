@@ -35,23 +35,32 @@ let numbers = document.querySelectorAll('.numbers');
 let signs = document.querySelectorAll('.sign');
 
 function displayIt(){
-    let number = [];    
+    let strArr = [];    
     for (let i = 0; i < numbers.length; i++){
         numbers[i].addEventListener('click', () =>{
             display.innerHTML += numbers[i].value;
-            number.push(numbers[i].value);
+            strArr.push(numbers[i].value);
         });
     };
 
     for(let i = 0; i < signs.length; i++){
         signs[i].addEventListener('click', () =>{
             clearIt();
-            console.log(number);
-            number = [];
+            storeNum(strArr);
+            strArr = [];
+            console.log(numberArr[0]);
             
         })
     }
 };
-
 displayIt();
 
+let numberArr = [];//store numbers that are typed at index 0 and will be changed every time a sign button is clicked
+
+function storeNum (arr){
+    let digit = '';
+    for(let i = 0; i < arr.length; i++){
+        digit += arr[i];
+    }
+    numberArr[0] = parseInt(digit);
+}
