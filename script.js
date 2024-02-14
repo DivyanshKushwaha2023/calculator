@@ -27,21 +27,25 @@ function operate (firstNum, operator, secondNum){
 
 
 let display = document.querySelector('#display');
-
+let number;
 function showOnDisplay(){
-    let signs = document.querySelectorAll('.sign');
-    for(let i = 0; i < signs.length; i++){
-        let sign;
-        signs[i].addEventListener('click', () => {display.textContent = signs[i].value;
-        return sign = signs[i].value})
-    }
-
     let numbers = document.querySelectorAll('.numbers');
     for (let i = 0; i < numbers.length; i++){
-        let number;
+
         numbers[i].addEventListener('click', () => {display.textContent = numbers[i].value;
-        return number = numbers[i].value})
+        number = numbers[i].value;})
     }
 };
 
 showOnDisplay();
+
+function getOperator(){
+    let signs = document.querySelectorAll('.sign');
+    for(let i = 0; i < signs.length; i++){
+        signs[i].addEventListener('click', () =>{
+            operator = signs[i].value;
+        });
+    }
+};
+
+getOperator();
