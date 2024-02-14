@@ -22,6 +22,10 @@ function operate (firstNum, operator, secondNum){
     if (operator == '/') return divide(firstNum, secondNum);
 };
 
+let firstNumber = null;
+let secondNumber = null;
+let sign = null;
+
 let display = document.querySelector('#display')
 let clear = document.querySelector('#clear');
 clear.addEventListener('click', () => clearIt());
@@ -48,8 +52,12 @@ function displayIt(){
             clearIt();
             storeNum(strArr);
             strArr = [];
-            console.log(numberArr[0]);
+
+            sign = signs[i].value;
             
+            getNum();
+            console.log(firstNumber);
+            console.log(secondNumber);
         })
     }
 };
@@ -64,3 +72,16 @@ function storeNum (arr){
     }
     numberArr[0] = parseInt(digit);
 }
+
+//coverts numberArr[0] numbers into input values for calculation
+function getNum() {
+    if(firstNumber == null && result == null){
+        firstNumber = numberArr[0];
+    } else if(firstNumber == null && result != null){
+        firstNumber = result;
+    } else{
+        secondNumber = numberArr[0];
+    }
+}
+
+let result = null;
