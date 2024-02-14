@@ -24,7 +24,7 @@ function operate (firstNum, operator, secondNum){
 
 let firstNumber = null;
 let secondNumber = null;
-let sign = null;
+let sign = [];
 
 let display = document.querySelector('#display')
 let clear = document.querySelector('#clear');
@@ -45,7 +45,9 @@ function displayIt(){
         numbers[i].addEventListener('click', () =>{
             display.innerHTML += numbers[i].value;
             strArr.push(numbers[i].value);
-            
+
+            calculate(); 
+
         });
     };
 
@@ -55,8 +57,8 @@ function displayIt(){
             storeNum();
             strArr = [];
             getNum();
-            calculate();
-            sign = signs[i].value;
+
+            sign[0] = signs[i].value; 
         })
     }
 };
@@ -70,6 +72,7 @@ function storeNum (){
         digit += strArr[i];
     }
     numberArr[0] = parseInt(digit);
+    digit = '';
 }
 
 //coverts numberArr[0] numbers into input values for calculation
@@ -78,6 +81,7 @@ function getNum() {
         firstNumber = numberArr[0];
     } else if(result != null){
         firstNumber = result;
+        secondNumber = numberArr[0];
     } else{
         secondNumber = numberArr[0];
     }
@@ -89,19 +93,16 @@ function calculate(){
     storeNum();
     getNum();
     if (firstNumber != null && secondNumber != null){
-        result = operate(firstNumber, sign, secondNumber);
+        result = operate(firstNumber, sign[0], secondNumber);
     };
-
-
 }
 
 
 let equate = document.querySelector('#equals')
 equate.addEventListener('click', () =>{
-    calculate();
+    equal();
+});
+
+function equal(){
     display.textContent = result;
-    console.log(firstNumber);
-    console.log(secondNumber);
-    console.log(result);
-    
-})
+}
