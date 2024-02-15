@@ -1,21 +1,37 @@
-#btns {
-    width: fit-content;
+body{
     display: flex;
-    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#btns {
+    width: 350px;
+    height: 500px;
+    display: flex;
+    border: 2px solid black;
     flex-direction: column;
 }
 
 .grp{
+    height: 100%;
     display: flex;
-    border: 1px solid black;
 }
 
-.numbers , .signs , #clear, #equals{
+.numbers , .sign , #clear, #equals{
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
 }
 
 #display {
-    min-width: 100px;
-    min-height: 20px;
+    font-size: 48px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: 1px solid black;
 }
