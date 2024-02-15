@@ -2,15 +2,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #edddc3;
 }
 
 
-#btns {
-    width: 350px;
-    height: 500px;
+#main {
+    margin-top: 30px;
+    background-color: rgb(66, 78, 85);
+    width: 400px;
+    height: 600px;
     display: flex;
-    border: 2px solid black;
+    border: 15px solid rgb(66, 78, 85);
+    border-radius: 8px;
     flex-direction: column;
+    box-shadow: 15px 15px 50px rgb(22, 20, 20);
 }
 
 .grp{
@@ -24,14 +29,49 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 36px;
+    border: 5px solid #7c8a82;
+    border-radius: 6px;
+    margin: 2px;
+}
+
+#clear:hover, #equals:hover{
+    background-color: #fd9879;
+}
+
+.numbers:hover{
+    background-color: #ffde8c;
+}
+
+.sign:hover{
+    background-color: #63bbff;
 }
 
 #display {
-    font-size: 48px;
+    margin-bottom: 12px;
+    border: 10px solid #7c8a82;
+    border-radius: 6px;
+    font-size: 54px;
     height: 100%;
-    width: 100%;
     display: flex;
     justify-content: end;
     align-items: center;
-    border: 1px solid black;
+    background-color: #f3f2f7;
+}
+
+.sign{
+
+    background-color: #ADE6FE;
+
+}
+
+.numbers{
+
+    background-color: #DCDEDC;
+
+}
+
+#equals, #clear {
+
+    background-color: #94B396;
+
 }
