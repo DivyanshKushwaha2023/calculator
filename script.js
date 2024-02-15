@@ -12,9 +12,14 @@ function multiply (a, b){
 
 function divide (a, b){
     if (b == 0) {
-        return 'i am not stupid.'   
+        return "JUST DON'T"   
     }
-    return (a / b).toFixed(2);
+    if (Number.isInteger(a/b)) {
+        return a / b;    
+    } else {
+        return (a / b).toFixed(2);    
+    }
+    
 };
 
 
