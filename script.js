@@ -52,9 +52,6 @@ function displayIt(){
         numbers[i].addEventListener('click', () =>{
             display.innerHTML += numbers[i].value;
             strArr.push(numbers[i].value);
-
-            calculate(); 
-
         });
     };
 
@@ -63,7 +60,7 @@ function displayIt(){
             display.textContent = null;
             storeNum();
             strArr = [];
-            getNum();
+            calculate();
 
             sign[0] = signs[i].value; 
         })
@@ -97,7 +94,6 @@ function getNum() {
 let result = null;
 
 function calculate(){
-    storeNum();
     getNum();
     if (firstNumber != null && secondNumber != null){
         result = operate(firstNumber, sign[0], secondNumber);
@@ -111,5 +107,11 @@ equate.addEventListener('click', () =>{
 });
 
 function equal(){
+    display.textContent = null;
+    storeNum();
+    strArr = [];
+
+    calculate();
+
     display.textContent = result;
 }
