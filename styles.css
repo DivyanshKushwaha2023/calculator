@@ -24,11 +24,13 @@ body{
 }
 
 .numbers , .sign , #clear, #equals{
+    color: #212221;
+    font-family: 'myfont';
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 65px;
     border: 5px solid #7c8a82;
     border-radius: 6px;
     margin: 2px;
@@ -47,10 +49,12 @@ body{
 }
 
 #display {
-    margin-bottom: 12px;
-    border: 10px solid #7c8a82;
+    color: #4b4d4b;
+    font-family: 'myfont';
+    margin-bottom: 10px;
+    border: 13px solid #7c8a82;
     border-radius: 6px;
-    font-size: 54px;
+    font-size: 75px;
     height: 100%;
     display: flex;
     justify-content: end;
@@ -59,19 +63,21 @@ body{
 }
 
 .sign{
-
     background-color: #ADE6FE;
 
 }
 
 .numbers{
-
     background-color: #DCDEDC;
 
 }
 
 #equals, #clear {
-
     background-color: #94B396;
 
 }
+
+@font-face {
+    font-family: 'myfont';
+    src: url('myfont.ttf');
+  }
