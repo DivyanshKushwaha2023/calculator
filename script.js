@@ -11,6 +11,9 @@ function multiply (a, b){
 };
 
 function divide (a, b){
+    if (b == 0) {
+        return 'i am not stupid.'   
+    }
     return (a / b).toFixed(2);
 };
 
