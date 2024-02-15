@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="display"></div>
-    <button id="plus" class="sign" value="+">+</button>
-    <button id="minus" class="sign" value="-">-</button>
-    <button id="multpliedby" class="sign" value="*">*</button>
-    <button id="divideby" class="sign" value="/">/</button>
-    <button id="equals">=</button>
-    <button id="zero" class="numbers" value="0">0</button>
-    <button id="one" class="numbers" value="1">1</button>
-    <button id="two" class="numbers" value="2">2</button>
-    <button id="three" class="numbers" value="3">3</button>
-    <button id="four" class="numbers" value="4">4</button>
-    <button id="five" class="numbers" value="5">5</button>
-    <button id="six" class="numbers" value="6">6</button>
-    <button id="seven" class="numbers" value="7">7</button>
-    <button id="eight" class="numbers" value="8">8</button>
-    <button id="nine" class="numbers" value="9">9</button>
-    <button id="clear">AC</button>
+    
+    <div class="btns" id="btns">
+        <div id="display"></div>
+        <div id="grpac" class="grp">
+            <button id="clear">AC</button>
+            <button id="divideby" class="sign" value="/">/</button>
+        </div>
+        <div id="grp7" class="grp">
+            <button id="seven" class="numbers" value="7">7</button>
+            <button id="eight" class="numbers" value="8">8</button>
+            <button id="nine" class="numbers" value="9">9</button>   
+            <button id="multpliedby" class="sign" value="*">*</button>    
+        </div>
+        <div id="grp4" class="grp">
+            <button id="four" class="numbers" value="4">4</button>
+            <button id="five" class="numbers" value="5">5</button>
+            <button id="six" class="numbers" value="6">6</button>    
+            <button id="minus" class="sign" value="-">-</button>
+        </div>
+        <div id="grp1" class="grp">
+            <button id="one" class="numbers" value="1">1</button>
+            <button id="two" class="numbers" value="2">2</button>
+            <button id="three" class="numbers" value="3">3</button>
+            <button id="plus" class="sign" value="+">+</button> 
+        </div>
+        <div id="grp0" class="grp">
+            <button id="zero" class="numbers" value="0">0</button> 
+            <button id="equals">=</button>
+        </div>
+    </div>
 </body>
 </html>

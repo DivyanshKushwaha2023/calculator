@@ -1,0 +1,21 @@
+#btns {
+    width: fit-content;
+    display: flex;
+    border: 1px solid black;
+    flex-direction: column;
+}
+
+.grp{
+    display: flex;
+    border: 1px solid black;
+}
+
+.numbers , .signs , #clear, #equals{
+    width: 100%;
+    display: flex;
+}
+
+#display {
+    min-width: 100px;
+    min-height: 20px;
+}
