@@ -13,13 +13,8 @@ function multiply (a, b){
 function divide (a, b){
     if (b == 0) {
         return "JUST DON'T"   
-    }
-    if (Number.isInteger(a/b)) {
-        return a / b;    
-    } else {
-        return (a / b).toFixed(2);    
-    }
-    
+    };
+    return a / b; 
 };
 
 
@@ -83,7 +78,7 @@ function storeNum (){
     for(let i = 0; i < strArr.length; i++){
         digit += strArr[i];
     }
-    numberArr[0] = parseInt(digit);
+    numberArr[0] = Number(digit);
     digit = '';
 }
 
@@ -120,6 +115,7 @@ function equal(){
     strArr = [];
 
     calculate();
+    sign = [];
 
-    display.textContent = result;
+    display.textContent = Number((result).toFixed(2));
 }
